@@ -1,12 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const Person = ({ img, name, job, children }) => {
+  return (
+    <article className="person">
+      <img
+        src="https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        alt="team-member"
+      />
+      <h4>{name}</h4>
+      <h4>{job}</h4>
+    </article>
+  );
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const TeamList = () => {
+  return (
+    <section className="person-list">
+      <Person img="34" name="john" job="developer" />
+      <Person img="25" name="Dave" job="designer" />
+      <Person img="52" name="lokem" job="developer" />
+    </section>
+  );
+};
+
+ReactDOM.render(<TeamList />, document.getElementById("root"));
